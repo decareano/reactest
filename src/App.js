@@ -1,26 +1,22 @@
-import React, { Component } from "react";
+import React from 'react';
 import './App.css';
-import AuthButton from './AuthButton';
-import isLoggedIn from './AuthButton'
+import ChildComponent from "./ChildComponent"
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoggedIn: true
-    };
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <h1>
-          This is a Demo showing several ways to implement Conditional Rendering in React.
-        </h1>
-        <AuthButton isLoggedIn={isLoggedIn} />
-      </div>
-    );
-  }
+class App extends React.Component {    
+    render() {    
+        return (   
+          <div> 
+           <h1> I am the parent component </h1>    
+            <h3><ChildComponent  text="i am first child" /></h3>
+             <h3><ChildComponent  text="i am second child" /></h3>
+             
+            
+             <h3><ChildComponent  text="i am third child" /></h3>
+          </div>
+        );  
+    }
 }
 
-export default App;
+
+
+export default App

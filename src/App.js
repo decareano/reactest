@@ -3,19 +3,20 @@ import './App.css';
 import ChildComponent from "./ChildComponent"
 
 // class App extends React.Component {   
-function App() {
+function App(props) {
 
-      //const [id, setId] = useState(1)
+      const [id, setId] = useState(1)
       const [name, setName] = useState("test")
   
-      const onClickHandler = e => {
+      const onClickHandler = (e) => {
     
-        setName("pinga123");
+        setName("test123")
+        setId(3)
         
       }
       useEffect(() => {
         console.log('name changed')
-      }, [name])
+      }, [id, name])
       
 
       return (   
@@ -26,7 +27,8 @@ function App() {
              
             
              <h3><ChildComponent  text="i am third child" /></h3>
-             <p>Name is: {name}</p>
+             <p>Hello, {name}</p>
+             <p>The id is now: {id}</p>
              <button onClick={onClickHandler}>Increase count</button>
 
           </div>
